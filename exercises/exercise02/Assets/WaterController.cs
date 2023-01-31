@@ -8,27 +8,42 @@ public class WaterController : MonoBehaviour
     public float launchForce = 100;
     public Rigidbody rb;
 
+    //public Color(float r, float g, float b);
+    //public Color newColor;
+
     // Start is called before the first frame update
     void Start()
     {
         rb.useGravity = false;
+        //Color newColor = new Color(146f, 104f, 41f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (gameObject.transform.position.x < -1.48 ||
-        gameObject.transform.position.x > 2.16)
+        //move water x position within groud x arrange
+        //(-1.48,2.16)
+        if (gameObject.transform.position.x < -1.8 ||
+        gameObject.transform.position.x > 2.6)
         {
             speed = speed * -1;
         }
         gameObject.transform.Translate(speed, 0, 0);
 
+        //press space, check gravity -> water fall
         if (Input.GetKeyDown(KeyCode.Space))
         {
             rb.useGravity = true;
         }
+    }
 
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.name == "Ground")
+        {
+            col.gameObject.GetComponent<Renderer>().material.color = new Color(0.3411f, 0.2431f, 0.09411f, 1f);
 
+            Destroy(gameObject);
+        }
     }
 }

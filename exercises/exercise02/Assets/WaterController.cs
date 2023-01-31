@@ -42,6 +42,7 @@ public class WaterController : MonoBehaviour
         if (col.gameObject.name == "Ground")
         {
             col.gameObject.GetComponent<Renderer>().material.color = new Color(0.3411f, 0.2431f, 0.09411f, 1f);
+            //col.gameObject.GetComponent<Renderer>().material.color = new Color(0.3604f, 0.7259f, 0.9433f, 1f);
 
             Destroy(gameObject);
         }

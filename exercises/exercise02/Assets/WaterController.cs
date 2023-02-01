@@ -8,14 +8,11 @@ public class WaterController : MonoBehaviour
     public float launchForce = 100;
     public Rigidbody rb;
 
-    //public Color(float r, float g, float b);
-    //public Color newColor;
 
     // Start is called before the first frame update
     void Start()
     {
         rb.useGravity = false;
-        //Color newColor = new Color(146f, 104f, 41f);
     }
 
     // Update is called once per frame
@@ -35,6 +32,8 @@ public class WaterController : MonoBehaviour
         {
             rb.useGravity = true;
         }
+
+
     }
 
     void OnCollisionEnter(Collision col)

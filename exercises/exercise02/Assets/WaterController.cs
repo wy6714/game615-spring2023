@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WaterController : MonoBehaviour
 {
-    public float speed = 0.001f;
+    public float speed = 0.01f;
     public float launchForce = 100;
     public Rigidbody rb;
 
